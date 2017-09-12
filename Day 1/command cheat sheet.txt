@@ -1,0 +1,15 @@
+1. rm Deletes things.
+2. rm -r Deletes folders and files (mostly used for folder). Essentially deletes
+   anything you point it at.
+3. rm -rf Blows things up. No questions asked. No way to turn back.
+4. cp copies files or directories. Ex.
+  cp Source Destination
+5. mv moves files or directories. CAN BE USED TO RENAME! Ex.
+  mv Source Destination
+  mv oldFileName newFileName
+6. pwd Prints the directory you are in
+7. cat Displays contents of file in terminal
+8. man Displays the manual for a given command
+9. ls List all files and subdirectories in a directory
+10. ls -a List everything (including hidden stuff) in a directory
+11. ls -F list everything, directories have slashes after them

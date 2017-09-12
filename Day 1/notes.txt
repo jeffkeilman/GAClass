@@ -1,0 +1,79 @@
+Command Line Demo -
+
+Home directory:
+/Users/n0290539 < my home directory
+
+may see it referred to as:
+1. ~
+2. $HOME
+
+File system contains directories/sub-directories:
+/Users/n0290539
+^root
+  ^folder
+        ^folder
+
+Can think of it as a tree. Hierarchy of directories and subdirectories.
+
+Absolute path:
+Starts at the root of the file system (home directory ex above)
+There is only ONE absolute path to any part of the file system:
+/Users/n0290539/Desktop/file.txt < This is an absolute address, no other way to
+write this. Think of it like mailing a letter. I only live at one address, and
+nobody else lives there.
+
+cmd + shift + g in Finder lets you open Go To Folder function
+
+Relative path:
+Starts within the directory you are currently in (more or less). Relative path is
+sort of like giving directions. "Take the red line down to Davis, walk three
+blocks..." This will change given where the person is that's trying to get to
+your house. BASED ON WHERE YOU ARE CURRENTLY.
+
+cd Downloads (from home directory)
+    ^ relative path to child directory
+
+Commands for navigating:
+
+.. = parent directory
+. = current directory
+- = last directory you were in
+
+Clearing terminal:
+clear command - inserts whitespace above so you don't see anything anymore
+cmd + k, wipes everything out
+
+ATOM:
+1. cmd + shift + p: Can be used to look up shortcuts and things.
+
+rm -rf < delete anything. Just do it. Destroy.
+
+Git -
+Never have a git repo within a git repo.
+
+git init: initialize empty git repo in current directory
+git status: shows status of git repos <-> working area
+git log: history of commits
+git add: adds files to staging area to prepare for commit
+git commit: commits local changes to repo, DO NOT use git commit -m in this class, they prefer a more robust message and title.
+git diff: Shows diff of things in repo and working area
+git diff --staged: Shows diff of things in repo and staging area
+git branch <name>: Make a new branch, dawg
+git checkout: switch to another branch (or undo uncommitted changes)
+git checkout -b: create a new branch and switch into it
+git merge: Move a change from a branch into master (or somewhere else I guess)
+
+One of three states (more or less) for git:
+Working Area -> Staging Area -> Git repository
+             ^ git add       ^ git commit
+        ^---------------------------^
+                ^ git checkout
+        ^-----------git reset
+
+Rebasing:
+Put history "beneath." Set branch to point at newest commit on master.
+Commit will naturally point at the branch it was once branched off of, change
+which branch it points at.
+TRY THIS!
+
+They want us to add files explicitly (individually).
