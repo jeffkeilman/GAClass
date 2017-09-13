@@ -1,0 +1,55 @@
+JavaScript -
+Five primitives of JS:
+1. Number
+  1. -0
+  2. NaN
+  3. Infinity ALL NUMBERS ACCORDING TO JS
+2. String
+  1. ''
+  2. "Not empty"
+3. Boolean
+  1. true
+  2. false
+4. null
+5. undefined
+
+4, 5 are different! Null: explicitly *nothing*. Absolutely should not have a value.
+Undefined often doesn't have a value *yet*.
+
+Literals: represent specific values in the source code. For instance, 1, 'A string',
+null. All of these values are very specific, there will never be another '1'.
+
+Variables: A value stored in memory that can change.
+
+We will use Node as a ***REPL***
+1. Read
+2. Evaluate
+3. Print
+4. Loop
+
+Think of this as a sandbox. A great place to play around. Go to terminal, enter
+'node' to enter.
+
+Will always use strict equal and strict does not equal in class. === !==
+
+Truthy and Falsy:
+Everything in JS is inherently truthy except:
+1. false
+2. undefined
+3. null
+4. 0 and -0
+5. NaN
+6. '', "", and ``
+
+Any time you clone a new repo, go ahead and run npm install to pull in all
+dependencies.
+
+bin is short for binary, lib short for library. bin will typically be run in
+terminal.
+
+process.argv[] < An array that stores all args passed when running a script
+
+grunt nag: run linter
+
+string interpolation:
+console.log(`Sorry, your guess '${answer}', isn't correct.`);
