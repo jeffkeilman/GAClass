@@ -1,0 +1,107 @@
+JS Reference Types -
+Three types we will talk about today:
+1. Plain Object
+ - Rather vague. Most things in JS that aren't primitive
+2. Array
+ - A collection of things
+3. Function
+ - Instructions that we can later
+ - Call
+ - Reuse
+ - Pass data to
+ - Get data out
+
+Standard (literal) declaration:
+  let object
+  let array
+  let function
+
+  object = {}
+  array = []
+  function = function () {} || function = () => {}
+
+Can also use constructors:
+  object = new Object()
+  array = new Array()
+  function = new Function()
+
+Getting values from the things:
+  let value = array[index]
+  let value = object.subObject
+  let value = function() // if it returns a value
+
+When a function is called, it's called "invocation." Done with parenthesis on the
+end.
+
+Updating an object:
+Can use dot notation/brackets to add new keys that don't exist.
+  object.newKey = 'lol'
+  object['newKey'] = 'lol'
+Can use both to update an existing key's value
+  object.exisitingKey = 'lol'
+  object['exisitingKey'] = 'lol'
+
+In JS, primitives are passed BY VALUE! Reference types (adequately named) are
+passed BY REFERENCE!
+
+let prim = 2
+let otherPrim = prim
+
+prim = 5 // otherPrim still equals 2
+
+let arr = ['dog']
+let otherArr = arr
+
+arr[1] = 'cat' // otherArr = ['dog', 'cat']
+
+The pair 'breaks' when original arr is assigned to a primitive:
+let arr = ['dog']
+let otherArr = arr
+
+arr.push('cat') // otherArr = ['dog', 'cat']
+
+arr = 1 // otherArr = ['dog', 'cat']
+
+DOES NOT work in reverse order. We have only assigned otherArr as a pointer to
+arr, not the other way around
+
+Arrays are just objects.
+
+let arr = ['cat', 'dog', 'pig']
+
+arr = {
+  0: 'cat',
+  1: 'dog',
+  2: 'pig',
+  length: 3
+}
+
+In definition of a function, you can set default values for parameters:
+const add = function (num = 2) {
+  return num + 1;
+}
+
+const() // returns 3
+const(4) // returns 5
+
+Arrow functions: Slightly different! Useful for other things.
+const addOne = (num) => {
+  return num + 1;
+}
+
+addOne(4) // returns 5
+
+cmd + d will select the next matching item
+
+Keys can be declared as:
+const car = {
+  key: value, < symbol
+  'key': value < string
+}
+
+Can use for(Key in object) loop to loop through KEYS of an object (for...in loop).
+
+JS Object Modeling -
+Keywords:
+1. Abstraction
+2. Model
