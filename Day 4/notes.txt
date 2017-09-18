@@ -1,0 +1,61 @@
+Abstraction and Models Cont. -
+Objects:
+
+{
+  attribute/key: value, < All properties
+  attribute/key: value, < all properties
+  method/key: function < all properties
+}
+
+Some examples:
+
+const crayon = {
+  color: 'blue',
+  size: 8,
+  brand: 'Crayola',
+  washable: true
+}
+
+const tv = {
+  channel: 100,
+  volume: 20,
+  isOn: false,
+  type: 'LCD',
+  resolution: '1065 x 480',
+  powerConsumptionInWT: 40,
+  powerToggle: function () {
+    this.isOn = !this.isOn
+  },
+  volumeUp: function () {
+    if (this.isOn) {
+      if (this.volume < 20) {
+        this.volume++
+      }
+      return 'Volume is set to ' + this.volume
+    }
+  },
+  volumeDown: function () {
+    if (this.isOn) {
+      if (this.volume > 0) {
+        this.volume--
+      }
+      return 'Volume is set to ' + this.volume
+    }
+  },
+  channelUp: function () {
+    if (this.isOn) {
+      if (this.channel < 100) {
+        this.channel++
+      }
+      return 'Channel is set to ' + this.channel
+    }
+  },
+  channelDown: function () {
+    if (this.isOn) {
+      if (this.channel > 0) {
+        this.channel--
+      }
+      return 'Channel is set to ' + this.channel
+    }
+  }
+}
