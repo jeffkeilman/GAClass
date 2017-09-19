@@ -1,0 +1,96 @@
+JS Functions ins and outs -
+Scope:
+declared outside of a block, accessible anywhere.
+
+declared outside, edited inside, those changes persist
+
+declared inside, NOT accessible anywhere else (let and const).
+
+let x = 0
+
+if (true) {
+  x = 1
+}
+
+console.log(x) // 1
+
+let x = 4
+
+if (true) {
+  let y = x
+}
+
+console.log(y) // undefined
+
+Defined inside and outside? Now there are two distinct variables.
+Probably don't want to do this.
+
+let x = 1
+
+if (true) {
+  let x = 4
+  console.log(x) // 4
+}
+
+console.log(x) // 1
+
+
+let x = 1
+
+if (true) {
+  console.log(x)
+  let x = 4
+  console.log(x)
+}
+^ breaks JS, why?
+
+JavaScript arguments array(ish):
+
+const print = function () {
+  console.log(arguments[0])
+}
+
+print('cat') // 'cat'
+
+arguments[] < not actually an array will hold any and all arguments
+passed to a function! Can leverage a for loop to loop over them all.
+
+Callback functions:
+A callback function is just a function that is passed to another function.
+
+const add = function (num1, num2) {
+  return num1 + num2
+}
+
+const subtract = function (num1, num2) {
+  return num1 - num2
+}
+
+const doMath = function (num1, num2, operation) {
+  return operation(num1, num2)
+}
+
+doMath(1, 2, add) // 3
+doMath(7, 3, subtract) // 4
+
+doMath('hello', 'kevin', console.log) // 'hello kevin'
+
+Factory: A function that returns a new function
+
+const memoFactory = function (memo) {
+  let rememberMe = memo
+  return function () {
+    console.log(rememberMe)
+  }
+}
+
+const newMemo = memoFactory('Hi Jeff')
+const otherMemo = memoFactory('This is a function')
+
+newMemo() // 'Hi Jeff'
+otherMemo() // 'This is a function'
+
+This is referred to as CLOSURE!
+
+HTML/CSS:
+g

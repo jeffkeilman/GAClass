@@ -1,0 +1,68 @@
+Thus far, we have been talking about object literals. Ex.
+
+const myObj = {
+  key: name,
+  method: function
+}
+
+This is not scalable. We will use _constructor functions_ to create objects
+dynamically.
+
+If we had:
+const batman = {
+  name: 'Bruce Wayne',
+  alias: 'The Bat-man',
+
+  usePower: function() {
+    return 'Spend money and hit people';
+  },
+};
+
+const wonderWoman = {
+  name: 'Diana Prince',
+  alias: 'Wonder Woman',
+
+  usePower: function() {
+    return 'Deflect bullets with bracelets';
+  },
+};
+
+These two are almost exactly the same. Wouldn't it be great if we could dynamically
+create multiple super heroes?
+
+const usePower = function () { // We declare OUTSIDE constructor because we don't need a new function for each new object
+  return this._power
+}
+
+const Hero = function (name, alias, power) {
+  This key >this.name = name<This attribute from constructor
+  this.alias = alias
+  this._power = power // this._power doesn't need to be declared elsewhere! will become new object prop
+  this.usePower = usePower
+} // What does this refer to? The object that WILL be created!
+
+DOs and DON'Ts of constructors:
+
+DO:
+1. Capitalize first letter
+
+DON'T:
+1. Don't re-assign at runtime. Declare as const
+2. Define function WITHIN constructor
+
+Prototype Lookup Chain:
+1. Is there a method/attribute called _x_ in my object spawn? No?
+2. Is there a method/attribute called _x_ in my parent object? No?
+3. Is there a method/attribute called _x_ in the object prototype? No?
+4. Is there a method/attribute called _x_ in the Object function?
+
+Prototypes:
+
+Object.prototype.element/method = ...
+
+Update automatically for all sub-objects BECAUSE of the way the prototype lookup
+chain works (see above). Essentially, JS will go looking for a method on the
+parent-object's prototype if it doesn't find it in the child object. This is
+the preferred method of adding METHODS but NOT ATTRIBUTES.
+
+Repeat on HTML and CSS yo.
