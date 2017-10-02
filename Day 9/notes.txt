@@ -1,0 +1,24 @@
+AJAX biz, web apis -
+HTTP Verb     Route/url     Action      English
+-----------------------------------------------
+GET           /books        index       (get all)
+GET           /books/:id    show        (get one)
+POST          /books        create      (create)
+PATCH/PUT     /books/:id    update      (update a book)
+DELETE        /books/:id    destroy     (delete a book)
+
+Handling events can be useful:
+$(something).on('submit', callback) what does .on pass to the callback by default? AN event
+
+const callback = function (event) {
+  event.preventDefault < stop the browser from doing the goofy event things, you are defining your own behavior
+}
+
+Generalized steps:                                          File?
+1. Build something that can be shown, add HTML element      index.html
+2. Add event handler                                        index.js
+3. Define the callback for handler                          books/events.js
+4. Define api function returns ajax/jqxhr object            books/api.js
+5. Define ui.onSuccess function to give user feedback       books/ui.js
+
+XHR Request = standard 'internet' request

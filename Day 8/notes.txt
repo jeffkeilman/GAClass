@@ -1,0 +1,58 @@
+DOM -
+
+The DOM is NOT:
+1. HTML
+2. Our source code
+
+You will never actually see the DOM. The closest we can get is dev tools code.
+
+JQuery -
+
+Uses CSS Selectors!
+
+You can access any parent, child, or sibling of a node with code
+
+jQuery has getters and setters:
+1. .val() - Gets current value of first element in a set of matched elements (input?) OR
+set the value of ALL matched elements. Ex.
+$('#searchBar').val()
+$('#searchBar').val('Hello')
+
+2. event handlers - Listen for events and then fire off functions when these things are
+happening. Ex: target some element, bind event listener, execute some function after some event
+$('#firstHeading').on('click', function(){
+  // do something
+})
+COOL THING:
+keyword 'event' object will give you a TON of info about whatever event was executed. This can
+be useful when handling events.
+OTHER COOL THING:
+Can use $(this) within jquery phrase to reference the current node you are pointing at:
+$('#heading').on('click', ()=> {
+  $(this).text('new heading text')
+})
+
+3. on() - setter for event handlers
+SO MANY MORE
+
+Bubbling:
+If you want to attach an event to an element that DOESN'T exist at page render time, you must attach that
+event to the element's parent. Bubbling will go up the chain until it finds a usable event handler.
+
+Ex.
+Let's say you have a site with products in an <ul>. You have an empty <ul> at page render time, but can add another
+product (<li>) through a pop-up menu that will load immediately on the page. This event didn't exist at page render time,
+so if we wanted to add a click event to it, we should add it to the <ul> element. THIS CAN APPLY TO ANYTHING! Existing parent/grandparents
+AND existing children can inherit event handlers from their parents/grandparents. Be careful attaching event handlers to things like, the
+document <body>. Could do things like limiting action in function in order to prevent unwanted behavior:
+
+function (event) { if (event.target === '...') ...} or function() { >should only ref original intended item this. ...}
+
+CRUD:
+
+action			HTTP Verb			URL/Route
+----------------------------------------------
+Create			
+Read			GET 				/books
+Update
+Destory

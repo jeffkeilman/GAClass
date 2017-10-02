@@ -1,0 +1,58 @@
+JS Array Iterations -
+
+const isTheCallback = function () {
+  console.log('in isTheCallback')
+}
+
+const takesCallback = function (callback) {
+  callback()
+}
+
+takesCallback(isTheCallback) // 'in isThe Callback'
+
+takesCallback(function () {
+  console.log('in anonymous function')
+}) // 'in anonymous function'
+
+// commonly use fat arrow function for anon callbacks
+takesCallback(() => {
+  console.log('in anonymous arrow function')
+}) // 'in anonymous arrow function'
+
+Arrow functions cons:
+1. cannot use arguments keyword, doesn't exist for fat arrows
+2. cannot be used as a Constructor
+3. always has a lexically bound this
+
+Useful for callback functions:
+1. implicit return! Will automatically return last thing evaluated
+2. Best practice for writing callbacks
+
+Awesome callback functions for arrays:
+1. forEach - does stuff to each element in an array
+  - Execute on an item, return undefined
+2. map - does stuff to each element in an array, builds a new array with those values and
+returns it
+  - Execute on an item, ***return*** that item, return modified array
+3. reduce - will take an entire array and reduce it to a single value given some instructions
+  - Execute on accumulator and item to return value of new acc, returns a new single value
+  - Can be used to sum all items in array, find the largest value, etc.
+4. filter - goes through an array and drops some items given logic on what to drop, returns
+new array
+  - Takes a predicate function (function that returns a boolean) and then returns an array
+  with the values from original array corresponding to all true evaluations
+ALL FOUR go through every single item in an array, always. Never, ever stop unless an exception
+is thrown.
+
+5. findIndex - Passed back the index of a given search value
+  - Takes predicate function as argument, returns index of fist true OR -1 if doesn't find anything
+6. find - Returns actual value of a given search value (return user.age > 21)
+  - Takes predicate function as argument, returns value of first true OR undefined if no trues
+THESE TWO will find the first object/value that matches a given criteria and then
+STOP!
+
+7. every - Check to see if all elements in an array meet a given condition, return
+true/false
+  - Takes a predicate function, keeps going until it hits a false or otherwise returns true
+8. some - If ANY element meets given condition, returns true, else false
+  - Takes a predicate function, keeps going until it hits a true or otherwise returns false
